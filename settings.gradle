@@ -1,1 +1,6 @@
 rootProject.name = 'ajt'
+include 'api'
+include 'core'
+include 'admin'
+include 'web'
+
