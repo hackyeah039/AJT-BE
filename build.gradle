@@ -35,7 +35,12 @@ subprojects {
 	}
 
 	dependencies {
-
+		implementation 'org.springframework.boot:spring-boot-starter-web'
+		annotationProcessor 'org.projectlombok:lombok'
+		implementation 'org.projectlombok:lombok'
+		testAnnotationProcessor 'org.projectlombok:lombok'
+		testImplementation 'org.projectlombok:lombok'
+		implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 		implementation 'org.springframework.boot:spring-boot-starter-web:2.6.1'
 		testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	}

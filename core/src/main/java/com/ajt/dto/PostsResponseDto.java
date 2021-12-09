@@ -1,10 +1,7 @@
 package com.ajt.dto;
 
 import com.ajt.domain.Posts;
-import lombok.Builder;
 import lombok.Getter;
-
-import javax.persistence.Column;
 
 /**
  * 최초 작성일 : 2021-12-09
