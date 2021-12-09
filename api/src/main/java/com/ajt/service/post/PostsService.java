@@ -1,9 +1,10 @@
-package com.ajt.service;
+package com.ajt.service.post;
 
 import com.ajt.domain.Posts;
 import com.ajt.dto.PostsResponseDto;
 import com.ajt.repository.PostsRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 @Service
 public class PostsService {
 
+    @Autowired
     private final PostsRepository repository;
 
     // 인자로 받은 id의 게시글을 조회하여 응답 DTO로 반환하는 함수

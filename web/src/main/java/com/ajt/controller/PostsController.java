@@ -2,7 +2,7 @@ package com.ajt.controller;
 
 import com.ajt.dto.PostsResponseDto;
 import com.ajt.repository.PostsRepository;
-import com.ajt.service.PostsService;
+import com.ajt.service.post.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
