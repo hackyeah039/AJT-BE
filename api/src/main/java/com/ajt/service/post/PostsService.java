@@ -7,6 +7,7 @@ import com.ajt.repository.PostsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -54,5 +55,4 @@ public class PostsService {
         repository.delete(post);
         return id;
     }
-
 }

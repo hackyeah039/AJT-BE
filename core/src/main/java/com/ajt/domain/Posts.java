@@ -1,17 +1,13 @@
 package com.ajt.domain;
 
-import com.ajt.repository.PostsRepository;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 /**
  * 최초 작성일 : 2021-12-09
- * 최초 작성자 : Jang
  *
  * 게시글 관련 DataBase Table Entity
  */
@@ -34,7 +30,7 @@ public class Posts extends TimeEntity {
 
     //게시글 작성자
     @Column(nullable = false)
-    private String writer;
+    private String author;
 
     //게시글 내용
     // 컬럼 타입 TEXT 지정
@@ -45,14 +41,18 @@ public class Posts extends TimeEntity {
     @Column(nullable = false)
     private int hits;
 
+    @Enumerated(EnumType.STRING)
+    private Category category;
+
 
     //빌더패턴, 순서 상관없이 생성가능
     @Builder
-    public Posts(String title,String writer, String content, int hits){
+    public Posts(String title,String author, String content, int hits, Category category){
         this.title=title;
-        this.writer=writer;
+        this.author=author;
         this.content=content;
         this.hits=hits;
+        this.category = category;
     }
 
     public void update(String title, String content) {
