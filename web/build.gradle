@@ -9,6 +9,7 @@ dependencies {
     implementation( project(':api'))
     implementation 'mysql:mysql-connector-java'
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
+    implementation 'junit:junit:4.12'
 }
 
 configurations {
