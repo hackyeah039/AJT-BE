@@ -1,9 +1,8 @@
 package com.ajt.controller;
 
-import com.ajt.domain.Posts;
-import com.ajt.dto.PostsRequestDto;
-import com.ajt.dto.PostsResponseDto;
-import com.ajt.service.post.PostsService;
+import com.ajt.dto.posts.PostsRequestDto;
+import com.ajt.dto.posts.PostsResponseDto;
+import com.ajt.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;

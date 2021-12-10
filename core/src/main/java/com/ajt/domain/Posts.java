@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 최초 작성일 : 2021-12-09
@@ -22,6 +24,7 @@ public class Posts extends TimeEntity {
     //게시글 번호
     @Id
     @GeneratedValue
+    @Column(name = "POSTS_ID")
     private Long id;
 
     //게시글 제목
@@ -40,6 +43,11 @@ public class Posts extends TimeEntity {
     //조회수
     @Column(nullable = false)
     private int hits;
+
+
+    //Like Table 과 일대다 양방향 관계
+    @OneToMany(mappedBy = "post")
+    private List<Likes> likeList = new ArrayList<Likes>();
 
     @Enumerated(EnumType.STRING)
     private Category category;

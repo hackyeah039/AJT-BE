@@ -2,39 +2,40 @@ server:
   port: 8083
 
 # 서버 확인용 설정
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://172.17.0.2:3306/ajt?serverTimezone=UTC&characterEncoding=UTF-8
-    username: root
-    password: password
-
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-
-  session:
-    store-type: jdbc
-
-# 로컬 확인용 설정
 #spring:
 #  datasource:
-#    url: jdbc:h2:mem:testdb
-#    username: sa
-#    password: 1234
-#    driver-class-name: org.h2.Driver
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://172.17.0.2:3306/ajt?serverTimezone=UTC&characterEncoding=UTF-8
+#    username: root
+#    password: password
 #
 #  jpa:
+#    show-sql: true
 #    hibernate:
-#      ddl-auto: create
-#    properties:
-#      hibernate:
-#        format_sql: true
-#  h2:
-#    console:
-#      enabled: true
-#      path: /console
-#logging:
-#  level:
-#    org.hibernate.SQL: debug
+#      ddl-auto: update
+#
+#  session:
+#    store-type: jdbc
+
+# 로컬 확인용 설정
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: 1234
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /console
+
+logging:
+  level:
+    org.hibernate.SQL: debug

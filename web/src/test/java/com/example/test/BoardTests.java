@@ -27,7 +27,7 @@ public class BoardTests {
         Posts post= Posts.builder()
                 .title("테스트용 타이틀")
                 .content("테스트용 컨텐츠")
-                .writer("테스트용 저자")
+                .author("테스트용 저자")
                 .hits(0)
                 .build();
 

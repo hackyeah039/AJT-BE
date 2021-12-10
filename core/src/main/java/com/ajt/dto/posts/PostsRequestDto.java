@@ -1,4 +1,4 @@
-package com.ajt.dto;
+package com.ajt.dto.posts;
 
 import com.ajt.domain.Posts;
 import lombok.Builder;
@@ -25,7 +25,7 @@ public class PostsRequestDto {
     private String title;
 
     //등록할 게시글 작성자
-    private String writer;
+    private String author;
 
     //등록할 게시글 내용
     private String content;
@@ -35,7 +35,7 @@ public class PostsRequestDto {
         return Posts.builder()
                 .title(title)
                 .content(content)
-                .writer(writer)
+                .author(author)
                 .hits(0)
                 .build();
     }
