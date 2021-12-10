@@ -1,13 +1,11 @@
-package com.ajt.service.post;
+package com.ajt.service;
 
 import com.ajt.domain.Posts;
-import com.ajt.dto.PostsRequestDto;
-import com.ajt.dto.PostsResponseDto;
+import com.ajt.dto.posts.PostsRequestDto;
+import com.ajt.dto.posts.PostsResponseDto;
 import com.ajt.repository.PostsRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

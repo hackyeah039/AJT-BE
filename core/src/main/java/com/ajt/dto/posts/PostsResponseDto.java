@@ -1,12 +1,8 @@
-package com.ajt.dto;
+package com.ajt.dto.posts;
 
 import com.ajt.domain.Posts;
 import com.ajt.domain.TimeEntity;
-import com.ajt.repository.PostsRepository;
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.time.LocalDateTime;
 
 /**
  * 최초 작성일 : 2021-12-09
@@ -25,7 +21,7 @@ public class PostsResponseDto extends TimeEntity {
     private String title;
 
     //게시글 작성자
-    private String writer;
+    private String author;
 
     //게시글 내용
     private String content;
@@ -33,13 +29,18 @@ public class PostsResponseDto extends TimeEntity {
     //조회 수
     private int hits;
 
+    //좋아요 횟수
+    private Long likes;
 
     // DB에서 조회한 Posts 객체를 이용하여 응답용 DTO 생성 하는 생성자
     public PostsResponseDto(Posts post) {
         this.id = post.getId();
         this.title = post.getTitle();
-        this.writer = post.getWriter();
+        this.author = post.getAuthor();
         this.content = post.getContent();
         this.hits=post.getHits();
+        this.likes = (long)post.getLikeList().size();
+        //유저 이름 목록이 필요한 경우
+        //this.likeList = post.getLikeList().stream().map(like -> like.getUsername()).collect(Collectors.toList());
     }
 }
