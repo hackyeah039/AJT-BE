@@ -19,7 +19,7 @@ public class UserApiController {
 
     @Autowired
     UserRepository userRepository;
-
+    //유저 데이터
     @GetMapping("/user/{id}")
     public User userInfo(@AuthenticationPrincipal PrincipalDetails principalDetails, @PathVariable Integer id){
         User user=userRepository.findById(id).orElseThrow();
