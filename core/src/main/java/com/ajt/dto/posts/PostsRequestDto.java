@@ -1,6 +1,7 @@
 package com.ajt.dto.posts;
 
 import com.ajt.domain.Posts;
+import com.ajt.domain.TimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Getter
-public class PostsRequestDto {
+public class PostsRequestDto extends TimeEntity {
 
     // 등록될 후 부여받을 게시글 번호
     private Long id;
