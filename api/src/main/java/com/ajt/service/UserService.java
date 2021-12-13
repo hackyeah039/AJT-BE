@@ -14,8 +14,4 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-//    public int save(UserSaveRequestDto dto){
-//        User user =userRepository.save(dto.toEntity());
-//        return user.getId();
-//    }
 }
