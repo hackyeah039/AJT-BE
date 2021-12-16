@@ -5,6 +5,7 @@ import com.ajt.domain.TimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * 최초 작성일 : 2021-12-09
@@ -17,6 +18,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Getter
+@Setter
 public class PostsRequestDto extends TimeEntity {
 
     // 등록될 후 부여받을 게시글 번호

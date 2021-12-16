@@ -1,10 +1,12 @@
 package com.ajt.controller;
 
+import com.ajt.config.auth.PrincipalDetails;
 import com.ajt.dto.posts.PostsRequestDto;
 import com.ajt.dto.posts.PostsResponseDto;
 import com.ajt.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,7 +37,8 @@ public class PostsApiController {
 
     //게시글 생성
     @PostMapping("/posts")
-    public Long save(@RequestBody final PostsRequestDto dto) {
+    public Long save(@RequestBody final PostsRequestDto dto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+        dto.setAuthor(principalDetails.getUsername());
         return postsService.save(dto);
     }
 

@@ -36,6 +36,22 @@ public class IndexController {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    @GetMapping("/")
+    public @ResponseBody String index(@AuthenticationPrincipal PrincipalDetails principalDetails){
+        System.out.println("여기서 부터 인덱스");
+        System.out.println(principalDetails.getAttributes());
+        return principalDetails.getUsername();
+    }
+    @GetMapping("/a")
+    public @ResponseBody String index2(@AuthenticationPrincipal PrincipalDetails principalDetails){
+        System.out.println("여기서 부터 인덱스2");
+        System.out.println(principalDetails.getUsername());
+        System.out.println(principalDetails.getAttributes());
+        System.out.println(principalDetails.getPassword());
+        System.out.println(principalDetails.getAuthorities());
+        return principalDetails.getUsername();
+    }
+
     @GetMapping("/test/login")
     @ResponseBody
     public String loginTest(Authentication authentication,@AuthenticationPrincipal PrincipalDetails userDetails
