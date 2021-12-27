@@ -13,7 +13,7 @@ public class User extends TimeEntity{
 
     @Id
     @GeneratedValue
-    @Column
+    @Column(name = "USER_ID")
     private int id;
 
     @Column
