@@ -45,7 +45,7 @@ public class CommentService {
         System.out.println(posts.getCommentList()+" 댓글삭제 " + commentID + " 이 아이디 넘버로 지울거임");
         commentRepository.deleteById(commentID);
     }
-    //댓글 수정
+    //댓글 수정 완료
     public long commentUpdate(Long id , Long commentID , CommentRequestDto commentRequestDto){
         System.out.println("수정 시작");
         Posts posts = postsRepository.findById(id).orElseThrow();
